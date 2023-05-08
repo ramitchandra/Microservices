@@ -26,7 +26,7 @@ services:
     restart: always
     
   eureka-server:
-    image: ramitchandra/rc/eureka-server:0.0.1-SNAPSHOT
+    image: ramitchandra/eureka-server:0.0.1-SNAPSHOT
     mem_limit: 700m
     ports:
       - "8761:8761"
@@ -42,7 +42,7 @@ services:
       retries: 5
 
   currency-exchange:
-    image: ramitchandra/rc/currency-exchange:0.0.1-SNAPSHOT
+    image: ramitchandra/currency-exchange:0.0.1-SNAPSHOT
     mem_limit: 700m
     ports:
       - "8000:8000"
@@ -57,7 +57,7 @@ services:
       MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
       
   currency-convertor:
-    image: ramitchandra/rc/currency-converter:0.0.1-SNAPSHOT
+    image: ramitchandra/currency-converter:0.0.1-SNAPSHOT
     mem_limit: 700m
     ports:
       - "8100:8100"
@@ -72,7 +72,7 @@ services:
       MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
       
   api-gateway:
-    image: ramitchandra/rc/api-gateway:0.0.1-SNAPSHOT
+    image: ramitchandra/api-gateway:0.0.1-SNAPSHOT
     mem_limit: 700m
     ports:
       - "8765:8765"
